@@ -141,4 +141,50 @@ export const asyncRouterMap = [{
     name: '服务状态监控',
     authority: 'serviceZipkinManager'
   }]
-}];
+}, {
+  path: '/sysManager',
+  component: Layout,
+  name: '系统管理',
+  icon: 'setting',
+  authority: 'sysManager',
+  // 用户管理
+  // 角色管理
+  // 权限管理
+  // 区域管理
+  // 考勤管理
+  // 员工管理
+  // 数据库管理
+  // 日志管理
+  children: [
+    {
+      path: 'customerManager',
+      component: _import('things/customer/index'),
+      name: '客户管理',
+      authority: 'customerManager'
+    },
+    {
+      path: 'areaManager',
+      component: _import('things/area/index'),
+      name: '区域管理',
+      authority: 'areaManager'
+    },
+    {
+      path: 'attendanceManager',
+      component: _import('things/attendance/index'),
+      name: '考勤管理',
+      authority: 'attendanceManager'
+    },
+    {
+      path: 'dtuMemberManager',
+      component: _import('things/dtuMember/index'),
+      name: '员工管理',
+      authority: 'dtuMemberManager'
+    },
+    {
+      path: 'dtuConfigInfoManager',
+      component: _import('things/dtuConfigInfo/index'),
+      name: '系统参数配置',
+      authority: 'dtuConfigInfoManager'
+    }]
+}
+];

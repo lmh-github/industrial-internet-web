@@ -268,3 +268,34 @@
    }
    return targetObj;
  }
+
+ // -------------------------将时间转换成指定的格式----------------------------
+ export function formatDateValue(strTime, pattern) { // 返回当前日期的年月日 1-9月+0    1-9日+0
+   if (strTime == null || typeof strTime == 'undefined') { // 0 == ''(true)
+     return null;
+   }
+   const date = new Date(strTime); // 0  Thu Jan 01 1970 08:00:00 GMT+0800 (中国标准时间)
+   let month = date.getMonth() + 1;
+   if (date.getMonth() + 1 <= 9) {
+     month = '0' + month;
+   }
+   let datestr = date.getDate();
+   if (datestr <= 9) {
+     datestr = '0' + datestr;
+   }
+   if (pattern === 'yyyy-MM-dd') { // yyyy-MM-dd 格式
+     return date.getFullYear() + '-' + month + '-' + datestr;
+   } else if (pattern === 'yyyy-MM') {
+     return date.getFullYear() + '-' + month;
+   } else if (pattern === 'MM') {
+     return date.getMonth() + 1;
+   } else if (pattern === 'yyyy') {
+     return date.getFullYear();
+   } else if (pattern === 'dd') {
+     return date.getDate(); // 天
+   } else if (pattern === 'hh:mm:ss') {
+     return (date.getHours() > 9 ? date.getHours() : '0' + date.getHours()) + ':' + (date.getMinutes() > 9 ? date.getMinutes() : '0' + date.getMinutes()) + ':' + (date.getSeconds() > 9 ? date.getSeconds() : '0' + date.getSeconds());
+   } else { // 默认值
+     return date.getFullYear() + '-' + month + '-' + datestr + ' ' + (date.getHours() > 9 ? date.getHours() : '0' + date.getHours()) + ':' + (date.getMinutes() > 9 ? date.getMinutes() : '0' + date.getMinutes()) + ':' + (date.getSeconds() > 9 ? date.getSeconds() : '0' + date.getSeconds());
+   }
+ }

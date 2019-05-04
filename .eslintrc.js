@@ -30,6 +30,11 @@ module.exports = {
         // }],
         // allow debugger during development
         'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+
+        // enforce consistent linebreak style
+        // 'linebreak-style': 'error',
+        'linebreak-style' : [0 ,"error", "windows"],
+
         /*
          * Possible Errors
          */
@@ -188,9 +193,6 @@ module.exports = {
         // enforce consistent spacing before and after keywords
         'keyword-spacing': 'error',
 
-        // enforce consistent linebreak style
-        'linebreak-style': 'error',
-
         // require or disallow newlines around directives
         'lines-around-directive': 'error',
 
@@ -256,6 +258,28 @@ module.exports = {
         // require or disallow Unicode byte order mark (BOM)
         'unicode-bom': 'error',
 
+        "no-unused-vars":0,
+
+        // 禁止修改类声明的变量
+    'no-class-assign': 2,
+    // 禁止修改const声明的变量
+    'no-const-assign': 2,
+    // 禁止类成员中出现重复的名称
+    'no-dupe-class-members': 2,
+    // 禁止 Symbolnew 操作符和 new 一起使用
+    'no-new-symbol': 2,
+    // 禁止在构造函数中，在调用super()之前使用 this 或 super
+    'no-this-before-super': 2,
+    // 禁止在对象中使用不必要的计算属性
+    'no-useless-computed-key': 2,
+    // 禁止不必要的构造函数
+    'no-useless-constructor': 2,
+    // 禁止模板字符串中嵌入表达式周围空格的使用
+    'template-curly-spacing': [2, 'never'],
+    // 强制yield*表达式中的*周围使用空格
+    'yield-star-spacing': [2, 'both'],
+    // 要求使用const声明那些声明后不再被修改的变量
+    'prefer-const': 2,
 
         /*
          * ECMAScript 6

@@ -2,7 +2,7 @@ import fetch from 'utils/fetch';
 
 export function page(query) {
   return fetch({
-    url: '/api/auth/service/page',
+    url: '/api/admin/user/page',
     method: 'get',
     params: query
   });
@@ -10,7 +10,7 @@ export function page(query) {
 
 export function addObj(obj) {
   return fetch({
-    url: '/api/auth/service',
+    url: '/api/admin/user',
     method: 'post',
     data: obj
   });
@@ -18,37 +18,22 @@ export function addObj(obj) {
 
 export function getObj(id) {
   return fetch({
-    url: '/api/auth/service/' + id,
+    url: '/api/admin/user/' + id,
     method: 'get'
   })
 }
 
 export function delObj(id) {
   return fetch({
-    url: '/api/auth/service/' + id,
+    url: '/api/admin/user/' + id,
     method: 'delete'
   })
 }
 
 export function putObj(id, obj) {
   return fetch({
-    url: '/api/auth/service/' + id,
+    url: '/api/admin/user/' + id,
     method: 'put',
     data: obj
-  })
-}
-
-export function getClients(id) {
-  return fetch({
-    url: '/api/auth/service/' + id + '/client',
-    method: 'get'
-  })
-}
-
-export function modifyClients(id, data) {
-  return fetch({
-    url: '/api/auth/service/' + id + '/client',
-    method: 'put',
-    params: data
   })
 }

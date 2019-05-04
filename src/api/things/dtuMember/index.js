@@ -2,15 +2,22 @@ import fetch from 'utils/fetch';
 
 export function page(query) {
   return fetch({
-    url: '/api/auth/service/page',
+    url: '/api/things/dtuMember/page',
     method: 'get',
     params: query
   });
 }
 
+export function getJobTypeList() {
+  return fetch({
+    url: '/api/things/jobTypeInfo/all',
+    method: 'get'
+  });
+}
+
 export function addObj(obj) {
   return fetch({
-    url: '/api/auth/service',
+    url: '/api/things/dtuMember',
     method: 'post',
     data: obj
   });
@@ -18,37 +25,22 @@ export function addObj(obj) {
 
 export function getObj(id) {
   return fetch({
-    url: '/api/auth/service/' + id,
+    url: '/api/things/dtuMember/' + id,
     method: 'get'
   })
 }
 
 export function delObj(id) {
   return fetch({
-    url: '/api/auth/service/' + id,
+    url: '/api/things/dtuMember/' + id,
     method: 'delete'
   })
 }
 
 export function putObj(id, obj) {
   return fetch({
-    url: '/api/auth/service/' + id,
+    url: '/api/things/dtuMember/' + id,
     method: 'put',
     data: obj
-  })
-}
-
-export function getClients(id) {
-  return fetch({
-    url: '/api/auth/service/' + id + '/client',
-    method: 'get'
-  })
-}
-
-export function modifyClients(id, data) {
-  return fetch({
-    url: '/api/auth/service/' + id + '/client',
-    method: 'put',
-    params: data
   })
 }

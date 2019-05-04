@@ -1,8 +1,16 @@
 import fetch from 'utils/fetch';
 
+export function fetchTree(query) {
+  return fetch({
+    url: '/api/things/customer/tree',
+    method: 'get',
+    params: query
+  });
+}
+
 export function page(query) {
   return fetch({
-    url: '/api/auth/service/page',
+    url: '/api/things/customer/page',
     method: 'get',
     params: query
   });
@@ -10,7 +18,7 @@ export function page(query) {
 
 export function addObj(obj) {
   return fetch({
-    url: '/api/auth/service',
+    url: '/api/things/customer',
     method: 'post',
     data: obj
   });
@@ -18,37 +26,22 @@ export function addObj(obj) {
 
 export function getObj(id) {
   return fetch({
-    url: '/api/auth/service/' + id,
+    url: '/api/things/customer/' + id,
     method: 'get'
   })
 }
 
 export function delObj(id) {
   return fetch({
-    url: '/api/auth/service/' + id,
+    url: '/api/things/customer/' + id,
     method: 'delete'
   })
 }
 
 export function putObj(id, obj) {
   return fetch({
-    url: '/api/auth/service/' + id,
+    url: '/api/things/customer/' + id,
     method: 'put',
     data: obj
-  })
-}
-
-export function getClients(id) {
-  return fetch({
-    url: '/api/auth/service/' + id + '/client',
-    method: 'get'
-  })
-}
-
-export function modifyClients(id, data) {
-  return fetch({
-    url: '/api/auth/service/' + id + '/client',
-    method: 'put',
-    params: data
   })
 }
