@@ -20,12 +20,15 @@ import vueWaves from './directive/waves';// 水波纹指令
 import errLog from 'store/errLog';// error log组件
 import './mock/index.js';  // 该项目所有请求使用mockjs模拟
 import { getToken } from 'utils/auth';
-import 'babel-polyfill';//支持IE执行原生script
+import 'babel-polyfill';// 支持IE执行原生script
+// 引入echarts
+import ECharts from 'vue-echarts/components/ECharts';
 
 // register globally
 Vue.component('multiselect', Multiselect);
 Vue.component('Sticky', Sticky);
 Vue.component('icon-svg', IconSvg)
+Vue.component('chart', ECharts)
 Vue.use(ElementUI);
 Vue.use(vueWaves);
 

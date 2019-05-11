@@ -2,7 +2,7 @@ import fetch from 'utils/fetch';
 
 export function fetchTree(query) {
   return fetch({
-    url: '/api/things/attendance/tree',
+    url: '/api/things/deviceSn/tree',
     method: 'get',
     params: query
   });
@@ -10,7 +10,7 @@ export function fetchTree(query) {
 
 export function page(query) {
   return fetch({
-    url: '/api/things/attendance/page',
+    url: '/api/things/deviceSn/page',
     method: 'get',
     params: query
   });
@@ -18,7 +18,7 @@ export function page(query) {
 
 export function addObj(obj) {
   return fetch({
-    url: '/api/things/attendance',
+    url: '/api/things/deviceSn',
     method: 'post',
     data: obj
   });
@@ -26,21 +26,21 @@ export function addObj(obj) {
 
 export function getObj(id) {
   return fetch({
-    url: '/api/things/attendance/' + id,
+    url: '/api/things/deviceSn/' + id,
     method: 'get'
-  });
+  })
 }
 
 export function delObj(id) {
   return fetch({
-    url: '/api/things/attendance/' + id,
+    url: '/api/things/deviceSn/' + id,
     method: 'delete'
   })
 }
 
 export function putObj(id, obj) {
   return fetch({
-    url: '/api/things/attendance/' + id,
+    url: '/api/things/deviceSn/' + id,
     method: 'put',
     data: obj
   })

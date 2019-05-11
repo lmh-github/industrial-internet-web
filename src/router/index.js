@@ -147,14 +147,6 @@ export const asyncRouterMap = [{
   name: '系统管理',
   icon: 'setting',
   authority: 'sysManager',
-  // 用户管理
-  // 角色管理
-  // 权限管理
-  // 区域管理
-  // 考勤管理
-  // 员工管理
-  // 数据库管理
-  // 日志管理
   children: [
     {
       path: 'customerManager',
@@ -179,12 +171,61 @@ export const asyncRouterMap = [{
       component: _import('things/dtuMember/index'),
       name: '员工管理',
       authority: 'dtuMemberManager'
+    }
+  ]
+},
+{
+  path: '/deviceManager',
+  component: Layout,
+  name: '设备管理',
+  icon: 'setting',
+  authority: 'deviceManager',
+  children: [
+    {
+      path: 'stationsManager',
+      component: _import('things/stations/index'),
+      name: '子站管理',
+      authority: 'stationsManager'
+    },
+    {
+      path: 'deviceSnManager',
+      component: _import('things/deviceSn/index'),
+      name: 'SN管理',
+      authority: 'deviceSnManager'
     },
     {
       path: 'dtuConfigInfoManager',
       component: _import('things/dtuConfigInfo/index'),
       name: '系统参数配置',
       authority: 'dtuConfigInfoManager'
-    }]
+    }
+  ]
+},
+{
+  path: '/reportManager',
+  component: Layout,
+  name: '报表管理',
+  icon: 'setting',
+  authority: 'reportManager',
+  children: [
+    {
+      path: 'energyReportManager',
+      component: _import('things/energyReport/index'),
+      name: '能耗分析报表',
+      authority: 'energyReportManager'
+    },
+    {
+      path: 'faultReportManager',
+      component: _import('things/faultReport/index'),
+      name: '故障分析报表',
+      authority: 'faultReportManager'
+    },
+    {
+      path: 'assetsReportManager',
+      component: _import('things/assetsReport/index'),
+      name: '资产分析报表',
+      authority: 'assetsReportManager'
+    }
+  ]
 }
 ];

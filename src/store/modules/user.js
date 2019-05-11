@@ -46,6 +46,9 @@ const user = {
     SET_NAME: (state, name) => {
       state.name = name;
     },
+    SET_USERNAME: (state, username) => {
+      state.username = username;
+    },
     SET_AVATAR: (state, avatar) => {
       state.avatar = avatar;
     },
@@ -101,6 +104,7 @@ const user = {
           const data = response;
           commit('SET_ROLES', 'admin');
           commit('SET_NAME', data.name);
+          commit('SET_USERNAME', data.username);
           commit('SET_AVATAR', 'http://git.oschina.net/uploads/42/547642_geek_qi.png?1499487420');
           commit('SET_INTRODUCTION', data.description);
           const menus = {};
