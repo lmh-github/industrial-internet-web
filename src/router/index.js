@@ -227,5 +227,20 @@ export const asyncRouterMap = [{
       authority: 'assetsReportManager'
     }
   ]
-}
+},
+{
+  path: '/gis',
+  component: Layout,
+  name: '地图视图',
+  icon: 'setting',
+  authority: 'gis',
+  children: [
+    {
+      path: 'view',
+      component: _import('gis/bmap/index'),
+      name: '地图视图',
+      authority: 'view'
+    },
+  ]
+},
 ];
